@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Holographic Web</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="shortcut icon"
+ href="favicon.png" />
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<style>
+		body {
+			background: rgba(1, 0, 0, 0);
+		}
+		.reveal div.void {
+			margin-left: 250px;
+			width: 500px;
+			height: 500px;
+			border-radius: 500px;
+			background-color: rgba(1, 0, 0, 0);
+			box-shadow: 0 0 8px 800px #0098FF;
+		}
+        .section {
+		    background-image: url(img/logo.png);
+        }
+	</style>
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+                <section data-background="#404343">
+                    <section>
+                        <h1> Building The Holographic Web
+ </h1>
+                        <p> Gavan Wilhite </p>
+                        <aside class="notes">
+                            "A new way of looking at the web"
+                        </aside>
+                    </section>
+                    <section>
+                        <p style="font-size: 2em;"> What is the holographic web? </p>
+                    </section>
+                    <section data-background="img/her.jpg"></section>
+                    <section data-background="img/hololens-globe.jpg"></section>
+                    <section data-background="img/valve.jpg"></section>
+                    <section>
+                        <h1> New Platforms  </h1>
+                        <h1> New Oportunties  </h1>
+                        <aside class="notes">
+                            The web needs to be on these platforms in a fufilling way, while maintaining the things that make it great
+                        </aside>
+                    </section>
+                    <section>
+                        <h1> Rendering </h1>
+                        <h3> 3D Elements</h3>
+                        <h3> Viewable from all angles </h3>
+                        <h3> Composable with other content</h3>
+                    </section>
+                    <section>
+                        <h1> Input </h1>
+                        <h3> Spacial pointing devices</h3>
+                        <h3> Tracking sensors</h3>
+                        <h3> </h3>
+                        <aside class="notes">
+                            "As high level as possible. Extra information may be needed to get accurate cursor movement and events. An entire talk on cursor"
+                        </aside>
+                    </section>
+                    <section>
+                        <h1> Syncronization </h1>
+                        <h3> You should be able to see what I see</h3>
+                    </section>
+                    <section>
+                        <h1> What does this look like in practice? </h1>
+                    </section>
+                </section>
+
+                <section data-background="#0098FF">
+                    <section><h1>Implementation</h1></section>
+                    <section>
+                        <h2> 3D Window System</h2>
+                        <h2> Three.js Renderer</h2>
+                        <h2> Input APIs </h2>
+                        <h2> Firebase Sync </h2>
+                    </section>
+                    <section>
+                        <h1> 3D Window System</h1>
+                        <h3> Enclosure </h3>
+                        <h3> Three.js Objects </h3>
+                        <h3> DOM Plane </h3>
+                    </section>
+                    <section>
+                        <h1> Enclosure </h1>
+                        <h2>  (1 Unit = 1 CSS Pixel) </h2>
+                        <pre><code data-trim>
+altspace.getEnclosure().then(function(enclosure){
+    //bounds
+    enclosure.innerWidth;
+    enclosure.innerHeight;
+    enclosure.innerDepth;
+
+    //scale
+    enclosure.pixelsPerMeter;
+});
+                        </code></pre>
+                        <aside class="notes">
+                            "CSS Pixels"
+                        </aside>
+                    </section>
+                    <section>
+                        <h1> Three.js Renderer </h1>
+                        <pre><code data-trim>
+// Obtain renderer just like for WebGL, Canvas, DOM, etc
+var renderer = altspace.getThreeJSRenderer();
+
+//Render inside main loop
+renderer.render(scene);//note the lack of a camera
+                        </code></pre>
+                        <aside class="notes">
+                            <h3> WebGL, Canvas, DOM, Altspace </h3>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2> three.js &#10143; Game Engine </h2>
+                        <h4> Transformations </h4>
+                        <h4> Geometries </h4>
+                        <h4> Materials</h4>
+                    </section>
+                    <section>
+                        <h1> Three.js Additions </h1>
+                        <h3> Behaviors </h3>
+                        <h3> Bubbling </h3>
+                    </section>
+                    <section>
+                        <h1> Behaviors </h1>
+                        <pre><code data-trim>
+altspace.getEnclosure().then(function(enclosure){
+    //bounds
+    enclosure.innerWidth;
+    enclosure.innerHeight;
+    enclosure.innerDepth;
+
+    //scale
+    enclosure.pixelsPerMeter;
+});
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section data-background="#03E59A">
+                    <section><h1>The Future</h1></section>
+                </section>
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex',
+
+				// Optional reveal.js plugins
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				//{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+			Reveal.configure({
+			    keyboard: {
+			        //83: null
+			    },
+			});
+
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js"></script>
+		<script src="fonts/helvetiker_regular.typeface.js"></script>
+		<script>
+			//Setup
+			scene = new THREE.Scene();
+
+			//Rendering
+			renderer = altspace.getThreeJSRenderer({version:'0.2.0'});
+
+			var sceneAnimation;
+
+			function animate() {
+				requestAnimationFrame(animate);
+				if (sceneAnimation) { sceneAnimation(); }
+				renderer.render(scene);
+			}
+			animate();
+
+			var getInitScene = function (el) {
+				var initScene = function () {
+					if (el.dataset.scene) {
+						sceneAnimation = window[el.dataset.scene](scene);
+					}
+					el.removeEventListener('transitionend', initScene);
+				}
+				return initScene;
+			};
+
+			Reveal.addEventListener('slidechanged', function (event) {
+				if (window.skeleton) {
+					for (var joint in skeleton.trackingJoints) {
+						if (skeleton.trackingJoints.hasOwnProperty(joint)) {
+							var jointObj = skeleton.trackingJoints[joint];
+							jointObj.remove(jointObj.children[0]);
+						}
+					}
+				}
+				for (var i = scene.children.length - 1; i >= 0; i--) {
+					scene.remove(scene.children[i]);
+				}
+				var el = event.currentSlide;
+				sceneAnimation = null;
+				el.addEventListener('transitionend', getInitScene(el));
+			});
+
+		</script>
+</body>
+</html>
