@@ -59,6 +59,10 @@
  </h1>
                         <p> Gavan Wilhite </p>
                         <aside class="notes">
+                            Explain to you what it is and why we should start thinking about it.
+                            Show you what we've done to implement a version of it.
+                            And look at what is next and how to get involved.
+
                             "A new way of looking at the web"
                         </aside>
                     </section>
@@ -68,12 +72,16 @@
                     <section data-background="img/her.jpg"></section>
                     <section data-background="img/hololens-globe.jpg"></section>
                     <section data-background="img/valve.jpg"></section>
-                    <section>
-                        <h1> New Platforms  </h1>
-                        <h1> New Oportunties  </h1>
+                    <!-- <section>
+                        <h1> First class web content on immersive platforms  </h1>
                         <aside class="notes">
                             The web needs to be on these platforms in a fufilling way, while maintaining the things that make it great
                         </aside>
+                    </section> -->
+                    <section>
+                        <h2> Rendering </h2>
+                        <h2> Input </h2>
+                        <h2> Syncronization </h2>
                     </section>
                     <section>
                         <h1> Rendering </h1>
@@ -95,7 +103,7 @@
                         <h3> You should be able to see what I see</h3>
                     </section>
                     <section>
-                        <h1> What does this look like in practice? </h1>
+                        <h1> Examples </h1>
                     </section>
                 </section>
 
@@ -145,6 +153,7 @@ renderer.render(scene);//note the lack of a camera
                         </aside>
                     </section>
                     <section>
+                        <h1> Renderer </h1>
                         <h2> three.js &#10143; Game Engine </h2>
                         <h4> Transformations </h4>
                         <h4> Geometries </h4>
@@ -152,27 +161,64 @@ renderer.render(scene);//note the lack of a camera
                     </section>
                     <section>
                         <h1> Three.js Additions </h1>
+                        <h3> Event Bubbling </h3>
                         <h3> Behaviors </h3>
-                        <h3> Bubbling </h3>
                     </section>
                     <section>
                         <h1> Behaviors </h1>
                         <pre><code data-trim>
-altspace.getEnclosure().then(function(enclosure){
-    //bounds
-    enclosure.innerWidth;
-    enclosure.innerHeight;
-    enclosure.innerDepth;
+var Spin = function (config) {
+    var object3d;
+    function awake(o) {
+        object3d = o;
+    }
+    function update(deltaTime) {
+        object3d.rotation.y += config.speed * deltaTime;
+    }
+    return { awake: awake, update: update };
+};
 
-    //scale
-    enclosure.pixelsPerMeter;
-});
+cube.addBehavior(
+    Spin({speed:0.002}),
+);
                         </code></pre>
                     </section>
+                <section>
+                    <h1> Input </h1>
+                    <h3> Ray-based Cursor </h3>
+                        <pre><code data-trim>
+mesh.addEventListener('cursorup', callback);
+                        </code></pre>
+                    <h3> Tracking Sensor Skeleton </h3>
+                </section>
+                <section>
+                    <h1> Sync </h1>
+                    <h3> scene sync behaviors </h3>
+                    <h3> utilizes firebase </h3>
+                </section>
+                <section>
+                    <h1> Tabletop Gaming Example </h1>
+                </section>
                 </section>
 
                 <section data-background="#03E59A">
                     <section><h1>The Future</h1></section>
+                    <section>
+                        <h1>Altspace SDK Beta</h1>
+                        <h3> http://developer.altvr.com </h3>
+                    </section>
+                    <section>
+                        <h1> Improvements
+                        <h3> Tighter DOM integration </h3>
+                        <h3> More Symbolic Objects </h3>
+                        <h3> Higher Rendering Quality </h3>
+                    </section>
+                    <section>
+                        <h1>Collaboration</h1>
+                    </section>
+                    <section>
+                        <h1>Work with us</h1>
+                    </section>
                 </section>
 
 
