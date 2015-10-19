@@ -72,6 +72,8 @@
                     <section data-background="img/her.jpg"></section>
                     <section data-background="img/hololens-globe.jpg"></section>
                     <section data-background="img/valve.jpg"></section>
+                    <section data-background="img/sdk/nyan-1.jpg">
+                    </section>
                     <!-- <section>
                         <h1> First class web content on immersive platforms  </h1>
                         <aside class="notes">
@@ -85,13 +87,13 @@
                     </section>
                     <section>
                         <h1> Rendering </h1>
-                        <h3> 3D Elements</h3>
+                        <h3> Fully 3D Elements</h3>
                         <h3> Viewable from all angles </h3>
                         <h3> Composable with other content</h3>
                     </section>
                     <section>
                         <h1> Input </h1>
-                        <h3> Spacial pointing devices</h3>
+                        <h3> Spacialized pointing devices</h3>
                         <h3> Tracking sensors</h3>
                         <h3> </h3>
                         <aside class="notes">
@@ -99,8 +101,16 @@
                         </aside>
                     </section>
                     <section>
+                        <h2> (Cursor .gif)</h2>
+                        <h2> (Lion Head Look)</h2>
+                    </section>
+                    <section>
                         <h1> Syncronization </h1>
                         <h3> You should be able to see what I see</h3>
+                    </section>
+                    <section data-background="img/sdk/beam.gif">
+                    </section>
+                    <section data-background="img/sdk/live-edit.gif">
                     </section>
                     <section>
                         <h1> Examples </h1>
@@ -112,9 +122,14 @@
                 <section data-background="#0098FF">
                     <section><h1>Implementation</h1></section>
                     <section>
-                        <h1> Built around three.js </h1>
-                        <h2> Host anywhere</h2>
-                        <h2> Portable applications</h2>
+                        <h1> three.js </h1>
+                        <h1> +</h1>
+                        <h1> chromium</h1>
+                    </section>
+                    <section>
+                        <h2> Enhance existing sites </h2>
+                        <h2> Host anywhere </h2>
+                        <h2> Multi-platform </h2>
                     </section>
                     <section>
                         <h2> 3D Window System</h2>
@@ -123,13 +138,8 @@
                         <h2> Firebase Sync </h2>
                     </section>
                     <section>
-                        <h1> 3D Window System</h1>
-                        <h3> Enclosure </h3>
-                        <h3> Three.js Objects </h3>
-                        <h3> DOM Plane </h3>
-                    </section>
-                    <section>
                         <h1> Enclosure </h1>
+                        <h2>  "3D Window" </h2>
                         <h2>  (1 Unit = 1 CSS Pixel) </h2>
                         <pre><code data-trim>
 altspace.getEnclosure().then(function(enclosure){
@@ -166,10 +176,36 @@ renderer.render(scene);//note the lack of a camera
                         <h4> Geometries </h4>
                         <h4> Materials</h4>
                     </section>
+                <section>
+                    <h1> Sync </h1>
+                    <h3> scene sync behaviors </h3>
+                    <h3> utilizes firebase </h3>
+                </section>
+                
+                <section>
+                    <h1> Input </h1>
+                    <h3> Ray-based Cursor </h3>
+                        <pre><code data-trim>
+mesh.addEventListener('cursorup', callback);
+                        </code></pre>
+                    <h3> Tracking Sensor Skeleton </h3>
+                        <pre><code data-trim>
+altspace.getThreeJSTrackingSkeleton().then(function(skeleton){
+    scene.add(skeleton);
+    skeleton.getJoint('Little', 'Left', 3).add(object3d);
+}
+                        </code></pre>
+                </section>
                     <section>
                         <h1> Three.js Additions </h1>
                         <h3> Event Bubbling </h3>
                         <h3> Behaviors </h3>
+                    </section>
+                    <section>
+                        <h1> Bubbling</h1>
+                        <h3> Scene </h3>
+                        <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8662; Button </h3>
+                        <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8662; Sprite</h3>
                     </section>
                     <section>
                         <h1> Behaviors </h1>
@@ -190,19 +226,6 @@ cube.addBehavior(
 );
                         </code></pre>
                     </section>
-                <section>
-                    <h1> Input </h1>
-                    <h3> Ray-based Cursor </h3>
-                        <pre><code data-trim>
-mesh.addEventListener('cursorup', callback);
-                        </code></pre>
-                    <h3> Tracking Sensor Skeleton </h3>
-                </section>
-                <section>
-                    <h1> Sync </h1>
-                    <h3> scene sync behaviors </h3>
-                    <h3> utilizes firebase </h3>
-                </section>
                 <section>
                     <h1> Tabletop Gaming Example </h1>
                 </section>
