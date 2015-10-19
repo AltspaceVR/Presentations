@@ -31,6 +31,13 @@
         .section {
 		    background-image: url(img/logo.png);
         }
+        html.dim .backgrounds {
+           -webkit-filter: saturate(.5) brightness(.4);
+           -moz-filter: saturate(.5) brightness(.4);
+           -o-filter: saturate(.5) brightness(.4);
+           -ms-filter: saturate(.5) brightness(.4);
+           filter: saturate(.5) brightness(.4);
+        }
 	</style>
 
 	<!-- Printing and PDF exports -->
@@ -66,12 +73,22 @@
                             "A new way of looking at the web"
                         </aside>
                     </section>
-                    <section>
-                        <p style="font-size: 2em;"> What is the holographic web? </p>
-                    </section>
+                    <section data-background="img/obiwan.jpg"></section>
                     <section data-background="img/her.jpg"></section>
-                    <section data-background="img/hololens-globe.jpg"></section>
-                    <section data-background="img/valve.jpg"></section>
+                    <section data-background="img/ironman.gif"></section>
+                    <section> <h1>These are being built today</h1> </section>
+                    <section data-background="img/headsets.png"></section>
+                    <!-- <section data-background="img/hololens-globe.jpg"></section>
+                    <section data-background="img/valve.jpg"></section> -->
+                    <section>
+                        <h1> Can we use the web? </h1>
+                        <h3> Sandbox </h3>
+                        <h3> Delivery System </h3>
+                        <h3> Community </h3>
+                        <h3> Live Editing </h3>
+                        <h3> Open 3D Content </h3>
+                        <h3> ... </h3>
+                    </section>
                     <section data-background="img/sdk/nyan-1.jpg">
                     </section>
                     <!-- <section>
@@ -80,18 +97,20 @@
                             The web needs to be on these platforms in a fufilling way, while maintaining the things that make it great
                         </aside>
                     </section> -->
-                    <section>
-                        <h2> Rendering </h2>
-                        <h2> Input </h2>
-                        <h2> Syncronization </h2>
+                    <section data-background="img/sdk/flappy.gif">
                     </section>
-                    <section>
+                    <section data-background="img/sdk/flappy.gif" data-state="dim">
                         <h1> Rendering </h1>
-                        <h3> Fully 3D Elements</h3>
+                        <h1> Input </h1>
+                        <h1> Syncronization </h1>
+                    </section>
+                    <section data-background="img/sdk/flappy.gif" data-state="dim">
+                        <h1> Rendering </h1>
+                        <h3> 3D Objects</h3>
                         <h3> Viewable from all angles </h3>
                         <h3> Composable with other content</h3>
                     </section>
-                    <section>
+                    <section data-background="img/sdk/flappy.gif" data-state="dim">
                         <h1> Input </h1>
                         <h3> Spacialized pointing devices</h3>
                         <h3> Tracking sensors</h3>
@@ -100,18 +119,14 @@
                             "As high level as possible. Extra information may be needed to get acurate cursor movement and events. An entire talk on cursor"
                         </aside>
                     </section>
-                    <section>
-                        <h2> (Cursor .gif)</h2>
-                        <h2> (Lion Head Look)</h2>
-                    </section>
-                    <section>
+                    <section data-background="img/sdk/flappy.gif" data-state="dim">
                         <h1> Syncronization </h1>
                         <h3> You should be able to see what I see</h3>
                     </section>
-                    <section data-background="img/sdk/beam.gif">
+                    <!-- <section data-background="img/sdk/beam.gif">
                     </section>
                     <section data-background="img/sdk/live-edit.gif">
-                    </section>
+                    </section> -->
                     <section>
                         <h1> Examples </h1>
                         <iframe height='500' scrolling='no' src='//codepen.io/team/altspacevr/embed/RWWKwd/?height=320&theme-id=0&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/team/altspacevr/pen/RWWKwd/'>Dual Rendered Cube</a> by AltspaceVR (<a href='http://codepen.io/altspacevr'>@altspacevr</a>) on <a href='http://codepen.io'>CodePen</a>.
@@ -178,7 +193,7 @@ renderer.render(scene);//note the lack of a camera
                     </section>
                 <section>
                     <h1> Sync </h1>
-                    <h3> scene sync behaviors </h3>
+                    <h3> scene sync utility </h3>
                     <h3> utilizes firebase </h3>
                 </section>
                 
@@ -232,21 +247,30 @@ cube.addBehavior(
                 </section>
 
                 <section data-background="#03E59A">
-                    <section><h1>The Future</h1></section>
+                    <section><h1> The Future</h1></section>
                     <section>
-                        <h1>Altspace SDK Beta</h1>
+                        <h1> Build </h1>
+                        <h1> Improve </h1>
+                        <h1> Collaborate </h1>
+                    </section>
+                    <section>
+                        <h1> Work to do
+                        <h4> 3D DOM </h4>
+                        <h4> Environmental APIs </h4>
+                        <h4> 6DOF Controllers </h4>
+                        <h4> Transparency </h4>
+                        <h4> Syncronization </h4>
+                        <h4> Lighting </h4>
+                        <h4> Shading </h4>
+                        <h4> Physics </h4>
+                        <h4> ... </h4>
+                    </section>
+                    <section>
+                        <h1> We need to do this </h1>
+                    </section>
+                    <section>
+                        <h1>Build Holograms</h1>
                         <h3> developer.altvr.com </h3>
-                    </section>
-                    <section>
-                        <h1> Improvements
-                        <h3> Tighter DOM integration </h3>
-                        <h3> More Symbolic Objects </h3>
-                        <h3> Higher Rendering Quality </h3>
-                    </section>
-                    <section>
-                        <h1>Collaboration</h1>
-                    </section>
-                    <section>
                         <h1>Work with us</h1>
                         <h3>jobs.altvr.com</h3>
                     </section>
